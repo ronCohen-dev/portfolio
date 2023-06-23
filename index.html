@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ron Cohen Portfolio</title>
+  <link rel="shortcut icon" href="logo.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <!--bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!--google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <!--js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lobster&display=swap" rel="stylesheet">
+
+  <!--google icon link-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--font awesomes icons link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+
+    $(document).ready(function () {
+
+      //!--SKILL BAR ANIMATION
+
+      var offsetTop = $('#skills').offset().top;
+      $(window).scroll(function () {
+        var height = $(window).height();
+        if ($(window).scrollTop() + height > offsetTop) {
+          jQuery('.skillbar').each(function () {
+            jQuery(this).find('.skillbar-bar').animate({
+              width: jQuery(this).attr('data-percent')
+            }, 2000);
+          });
+        }
+      });
+
+
+
+      $('[data-toggle="tooltip"]').tooltip();
+
+
+      $("a").on('click', function (event) {
+
+        if (this.hash !== "") {
+
+
+          event.preventDefault();
+
+
+          var hash = this.hash;
+
+          
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+
+            window.location.hash = hash;
+          });
+        } 
+      });
+    })
+
+  </script>
+</head>
+
+<!---Nav Bar-->
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="150">
+  <nav class="navbar main-nav  navbar-default navbar-fixed-top">
+
+    <div class="navbar-header">
+      <!--Creating toggle bar-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+        style="background-color:rgb(255, 255, 255);">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span>
+        <a class="navbar-brand" href="index.html">Hellow there !</a>
+      </span>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right ">
+
+        <li><a href="#about"> ABOUT ME </a></li>
+        <li><a href="#work"> WORK </a></li>
+        <li><a href="#contact"> CONTACT </a></li>
+
+      </ul>
+    </div>
+
+
+  </nav>
+
+
+  <div id="section2" class="container-fluid jumbotron text-center lobsterfont"
+    style="margin-top:100px;background-color: white;">
+    <h1 style="color: #4397e0;">Hellow there!</h1>
+    <h1 style="color: #257ecb;display: inline;">I am </h1>
+    <h1 style="color: #257ecb;display: inline;"> Ron Cohen</h1>
+    <h1 style="font-family: 'sans-serif'; color: #257ecb;">A full-stack Developer</h1>
+    <a href="cohen-ron cv.pdf" download=" " class="btn btncolor">Download My Resume</a>
+
+  </div>
+
+  <!---ABOUT SECTION -->
+
+  <div id="about" class="container-fluid text-center" style="background-color: #f5f5f5;">
+    <h1 class="heading">ABOUT ME</h1>
+    <hr class="solid">
+
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg 4 thumb">
+
+        <!---PIC AND INTRO-->
+
+
+        <img onContextMenu="return false;" src="ron-protfolio.jpeg" class="zoom img-fluid " alt="mypic">
+
+        <h3 align=left style="color: #67676e;">Who am I?</h3>
+        <p align=justify>1+ years of experience as a Full-Stack Developer in a SaaS company
+          Proficient in Java, JavaScript, TypeScript, SQL, MySQL, Angular, CSS, HTML, MongoDB.<br>
+          Did a 3 month-long project for JFrog and actively used Java and Go - Chosen as the best student for
+          collaboration.<br>
+          Strong proficiency in Spring Boot, Spring security, Docker, PostgreSQL, and RabbitMQ.<br>
+          Experience with scripting in Bash and using Lambda in Python.<br>
+          Hands-on experience with RestAPI, Microservices, and NoSQL databases. <br>
+          Worked in AWS cloud technologies - S3, EC2, and EKS.<br>
+          Good understanding of Engineering OOP and Kubernetes.<br>
+          Deep knowledge of Hibernate, proficient in Object Oriented Design - OOD. <br>
+          Hands-on experience with high throughput systems with multi-threading.<br>
+          English - Professional proficiency.</p>
+
+      </div>
+
+      <!---SKILLS -->
+
+      <div class="col-sm-12 col-md-8 col-lg ">
+
+        <h3 align=left style="margin-left:2% ;" class="heading"> SKILLS :</h3>
+        <div id="skills">
+          <div class="col-lg-8">
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>Java</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>Kubernetes</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>AWS</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>RabbitMQ</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>Kafka</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>Springboot</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>Microservices</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>MySql</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd"></div>
+            </div> <!-- End Skill Bar -->
+
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>MongoDb</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>CSS</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd;"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>Javascript</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #b7b6fd"><span>HTML5</span></div>
+              <div class="skillbar-bar" style="background: #b7b6fd"></div>
+            </div> <!-- End Skill Bar -->
+
+            <div class="skillbar clearfix " data-percent="100%">
+              <div class="skillbar-title" style="background: #7372dd"><span>Angular</span></div>
+              <div class="skillbar-bar" style="background: #7372dd"></div>
+            </div> <!-- End Skill Bar -->
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="work" class="container-fluid  text-center " style="background-color: white;padding-bottom: 3%;">
+      <h1 style="color: #67676e;">WORK</h1>
+      <hr style="width:10%; color:#000;margin-bottom: 5%;" class="solid">
+
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 ">
+          <span class="material-icons feature">person</span>
+          <h3 style="color: #67676e;" class="lobsterfont">Self player</h3>
+
+          <p>High self-learning ability and in addition the problem and investigated to find an ideal solution.</p>
+
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ">
+          <span class="material-icons feature ">group</span>
+          <h3 style="color: #67676e;" class="lobsterfont">Team player</h3>
+          <p>Has the ability to work in a group.</p>
+
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3 ">
+          <span class="material-icons feature">speed</span>
+          <h3 style="color: #67676e;" class="lobsterfont">Fast</h3>
+          <p>Ability to quickly learn new technologies.</p>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3 ">
+          <span class="material-icons feature">lightbulb</span>
+          <h3 style="color: #67676e;" class="lobsterfont">Creative</h3>
+          <p>Big thinker , ability to think outside the box and creative thinking to find solutions.</p>
+        </div>
+
+
+      </div>
+
+      <div id="contact" class="container-fluid text-center" style="padding-bottom: 3%;background-color: #f5f5f5;">
+        <h1 class="heading">CONTACT</h1>
+        <hr class="solid">
+        <a href="#section2" class="topButton"><span class="material-icons">arrow_upward</span></a>
+        <p style="color: #67676e;;">Feel free to contact me.</p>
+        <a style="background-color: #25D366;" class="contactIcons"><i class="fa fa-whatsapp"> 050-2227959</i></a>
+        <a href="" style="background-color: #E60023;" class="contactIcons"><i class="fa fa-at">
+            ron.cohen.job@gmail.com</i></a>
+        <a href="https://www.linkedin.com/in/ron-cohen-a8699923b/" style="background-color: #0077b5;"
+          class="contactIcons"><i class="fa fa-linkedin-square"></i></a>
+      </div>
+      <div class="container-fluid  text-center footer">
+        <p>ron cohen</p></a>
+      </div>
+
+</body>
+
+</html>
